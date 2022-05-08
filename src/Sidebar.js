@@ -14,6 +14,34 @@ function Sugestoes(props) {
     )
 }
 export default function Sidebar() {
+    const sugestao = [
+        {
+            image: "assets/img/bad.vibes.memes.svg",
+            name: "bad.vibes.memes",
+            razao: "Segue você"
+        },
+        {
+            image: "assets/img/chibirdart.svg",
+            name: "chibirdart",
+            razao: "Segue você"
+        },
+        {
+            image: "assets/img/razoesparaacreditar.svg",
+            name: "razoespraacreditar",
+            razao: "Novo no Instagram"
+        },
+        {
+            image: "assets/img/adorable_animals.svg",
+            name: "adorable_animals",
+            razao: "Segue você"
+        },
+        {
+            image: "assets/img/smallcutecats.svg",
+            name: "smallcutecats",
+            razao: "Segue você"
+        }
+    ]
+
     return (
         <div class="sidebar">
             <div class="usuario">
@@ -28,40 +56,17 @@ export default function Sidebar() {
                     Sugestões para você
                     <div>Ver tudo</div>
                 </div>
-                <Sugestoes
-                image="assets/img/bad.vibes.memes.svg"
-                name="bad.vibes.memes"
-                razao="Segue você"
-            />
-            <Sugestoes
-                image="assets/img/chibirdart.svg"
-                name="chibirdart"
-                razao="Segue você"
-            />
-            <Sugestoes
-                image="assets/img/razoesparaacreditar.svg"
-                name="razoespraacreditar"
-                razao="Novo no Instagram"
-            />
-               <Sugestoes
-                image="assets/img/adorable_animals.svg"
-                name="adorable_animals"
-                razao="Segue você"
-            />
-                 <Sugestoes
-                image="assets/img/smallcutecats.svg"
-                name="smallcutecats"
-                razao="Segue você"
-            />
-              <div class="links">
-            Sobre • Ajuda • Imprensa • API • Carreiras • Privacidade • Termos • Localizações • Contas mais relevantes • Hashtags • Idioma
-          </div>
+                {sugestao.map(item => <Sugestoes image={item.image} name={item.name} razao={item.razao} />)}
 
-          <div class="copyright">
-            © 2021 INSTAGRAM DO FACEBOOK
-          </div>
+                <div class="links">
+                    Sobre • Ajuda • Imprensa • API • Carreiras • Privacidade • Termos • Localizações • Contas mais relevantes • Hashtags • Idioma
+                </div>
+
+                <div class="copyright">
+                    © 2021 INSTAGRAM DO FACEBOOK
+                </div>
             </div>
-  
+
         </div>
     )
 }

@@ -1,4 +1,4 @@
-import{ Icons } from "./Icones"
+import { Icons } from "./Icones"
 
 function Post(props) {
     return (
@@ -8,8 +8,8 @@ function Post(props) {
                     <img src={props.image} />
                     {props.name}
                 </div>
-                <div class="acoes"> 
-                   <Icons icone ="ellipsis-horizontal"/>
+                <div class="acoes">
+                    <Icons icone="ellipsis-horizontal" />
                 </div>
             </div>
 
@@ -40,24 +40,30 @@ function Post(props) {
     )
 }
 export default function Posts() {
+    const post = [
+        {
+            image: "assets/img/meowed.svg",
+            name: "meowed",
+            photo: "assets/img/gato-telefone.svg",
+            foto: "assets/img/respondeai.svg",
+            usuario: "respondeai",
+            qtdCurtida: "outras 101.523 pessoas"
+        },
+        {
+            image: "assets/img/barked.svg",
+            name: "barked",
+            photo: "assets/img/dog.svg",
+            foto: "assets/img/adorable_animals.svg",
+            usuario: "adorable_animals",
+            qtdCurtida: "outras 99.159 pessoas"
+        }
+    ]
+    const usuario = post.map(item => <Post image={item.image} name={item.name} photo={item.photo} foto={item.foto} 
+        usuario={item.usuario} qtdCurtida={item.qtdCurtida}/>)
     return (
         <div class="posts">
-            <Post
-            image = "assets/img/meowed.svg"
-            name = "meowed"
-            photo ="assets/img/gato-telefone.svg"
-            foto ="assets/img/respondeai.svg"
-            usuario ="respondeai"
-            qtdCurtida="outras 101.523 pessoas"
-             />
-                <Post
-            image = "assets/img/barked.svg"
-            name = "barked"
-            photo ="assets/img/dog.svg"
-            foto ="assets/img/adorable_animals.svg"
-            usuario ="adorable_animals"
-            qtdCurtida="outras 99.159 pessoas"
-             />
+         {post.map(item => <Post image={item.image} name={item.name} photo={item.photo} foto={item.foto} 
+        usuario={item.usuario} qtdCurtida={item.qtdCurtida}/>)}
         </div>
     )
 }
