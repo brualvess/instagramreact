@@ -1,6 +1,14 @@
+import React from 'react';
 import { Icons } from "./Icones"
 
 function Post(props) {
+    const [curti, setCurti]=React.useState("")
+    function curtida(){
+        setCurti("md hydrated red")
+        console.log("hello")
+        console.log(curti)
+    }
+    
     return (
         <div class="post">
             <div class="topo">
@@ -13,14 +21,14 @@ function Post(props) {
                 </div>
             </div>
 
-            <div class="conteudo">
-                <img src={props.photo} />
+            <div class="conteudo" >
+                <img onClick={curtida}src={props.photo} />
             </div>
 
             <div class="fundo">
                 <div class="acoes">
                     <div>
-                        <Icons icone="heart-outline" />
+                        <Icons classe={curti} icone="heart-outline" />
                         <Icons icone="chatbubble-outline" />
                         <Icons icone="paper-plane-outline" />
                     </div>
@@ -40,6 +48,7 @@ function Post(props) {
     )
 }
 export default function Posts() {
+    
     const post = [
         {
             image: "assets/img/meowed.svg",
@@ -58,11 +67,9 @@ export default function Posts() {
             qtdCurtida: "outras 99.159 pessoas"
         }
     ]
-    const usuario = post.map(item => <Post image={item.image} name={item.name} photo={item.photo} foto={item.foto} 
-        usuario={item.usuario} qtdCurtida={item.qtdCurtida}/>)
     return (
         <div class="posts">
-         {post.map(item => <Post image={item.image} name={item.name} photo={item.photo} foto={item.foto} 
+         {post.map(item => <Post key = {item.name} image={item.image} name={item.name} photo={item.photo} foto={item.foto} 
         usuario={item.usuario} qtdCurtida={item.qtdCurtida}/>)}
         </div>
     )

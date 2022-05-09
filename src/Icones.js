@@ -1,6 +1,6 @@
 export function Icons (props){
   return(
-  <ion-icon name = {props.icone}></ion-icon>
+  <ion-icon class={props.classe}name = {props.icone}></ion-icon>
   )
 }
 

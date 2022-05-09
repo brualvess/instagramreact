@@ -267,6 +267,7 @@ body {
   height: 32px;
 }
 
+
 .sidebar .sugestoes .seguir {
   color: #139EF2;
   font-weight: 600;
@@ -309,6 +310,9 @@ body {
 .logo-mobile, .instagram-mobile {
   display: none !important;
 }
+.red {
+  color:red
+}
 
 @media (max-width: 935px) {
   .sidebar {
@@ -323,6 +327,7 @@ body {
     justify-content: center;
     width: 100%;
   }
+  
 }
 
 @media (max-width: 614px) {
